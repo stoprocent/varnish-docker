@@ -1,6 +1,5 @@
-FROM        ubuntu:14.04.2
-MAINTAINER  Love Nyberg "love.nyberg@lovemusic.se"
-ENV REFRESHED_AT 2014-10-18
+FROM phusion/baseimage:latest
+MAINTAINER  Marek Serafin "marek@snowheads.pl"
 
 # Update the package repository and install applications
 RUN apt-get update -qq && \
@@ -12,7 +11,7 @@ RUN apt-get update -qq && \
 ADD default.vcl /etc/varnish/default.vcl
 
 ENV VARNISH_BACKEND_PORT 80
-ENV VARNISH_BACKEND_IP 172.17.42.1
+ENV VARNISH_BACKEND_IP 127.0.0.1
 ENV VARNISH_PORT 80
 
 # Expose port 80
