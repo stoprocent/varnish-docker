@@ -18,7 +18,7 @@ ENV VARNISH_PORT 80
 EXPOSE 80
 
 # Expose volumes to be able to use data containers
-VOLUMES ["/var/lib/varnish", "/etc/varnish"]
+VOLUME ["/var/lib/varnish", "/etc/varnish"]
 
 ADD start.sh /start.sh
 CMD ["/start.sh"]
